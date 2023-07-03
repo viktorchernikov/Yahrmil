@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     public static Player Main { get; private set; }
 
     public DuctTape DuctTape { get; private set; }
-    public Rigidbody2D UseRigidbody { get; private set; }
+    public Rigidbody UseRigidbody { get; private set; }
     public PlayerController Controller { get; private set; }
     public PlayerModel Model { get; private set; }
     public PlayerMotor Motor { get; private set; }
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     }
     private void InitMods()
     {
-        UseRigidbody = GetComponentInChildren<Rigidbody2D>();
+        UseRigidbody = GetComponentInChildren<Rigidbody>();
         Modules = GetComponentsInChildren<PlayerModule>();
         Controller = GetModule<PlayerController>();
         Model = GetModule<PlayerModel>();

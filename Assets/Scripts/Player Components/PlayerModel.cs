@@ -14,7 +14,7 @@ public class PlayerModel : PlayerModule
         if (i != 0)
         {
             FacingRight = i == 1;
-            transform.localScale = new Vector2(i, 1);
+            transform.localScale = new Vector3(1, 1, i);
         }
         Animator.SetBool("IsMoving", v > float.Epsilon);
         Animator.SetFloat("SpeedMultiplier", v / Player.Motor.MoveSpeed);

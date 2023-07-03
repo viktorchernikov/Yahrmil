@@ -12,13 +12,13 @@ public class PlayerMotor : PlayerModule
     public override void OnFixedUpdate()
     {
         CheckGround();
-        if (IsGrounded)
+        if (true)
         {
             float inp = GameInput.Move.x;
-            Vector2 mv = Quaternion.Euler(0, 0, -90) * GroundNormal * inp;
+            Vector2 mv = transform.forward * inp;
             if (Mathf.Abs(Vector2.Dot(Player.UseRigidbody.velocity, mv)) < MoveSpeed)
             {
-                Player.UseRigidbody.AddForce(mv * AccelerateRate, ForceMode2D.Force);
+                Player.UseRigidbody.AddForce(mv * AccelerateRate, ForceMode.Force);
             }
         }
     }
